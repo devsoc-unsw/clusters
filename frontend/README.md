@@ -79,8 +79,35 @@ bunx expo start --android  # Run on Android device/emulator
 bunx expo start --ios      # Run on iOS device/simulator
 bunx expo start --web      # Run in web browser
 bun run test           # Run tests with Jest
-bun run lint           # Run ESLint
+bun run lint           # Run ESLint and auto-fix issues
+bun run lint:check     # Check linting without fixing
+bun run prettier       # Format all files with Prettier
+bun run prettier:check # Check Prettier formatting
+bun run typecheck      # Run TypeScript type checking
 ```
+
+### Code Quality & Linting
+
+This project uses ESLint, Prettier, and TypeScript for code quality:
+
+- **ESLint**: Configured with TypeScript, React, and React Native rules
+- **Prettier**: Code formatting with no final newlines
+- **Pre-commit hooks**: Automatically run type checking and linting before commits
+- **TypeScript**: Strict type checking enabled
+
+#### Linting Rules
+- TypeScript best practices enforced
+- React and React Native specific rules
+- Prettier integration for consistent formatting
+- No trailing newlines in files
+- Unused variables detection
+- React hooks usage validation
+
+#### Pre-commit Workflow
+Every commit automatically:
+1. Runs TypeScript type checking
+2. Lints and formats only staged files
+3. Blocks commit if errors exist
 
 ### Code Organization
 

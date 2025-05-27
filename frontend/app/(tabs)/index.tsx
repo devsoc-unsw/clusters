@@ -6,7 +6,9 @@ export default function HomeScreen() {
   return (
     <ThemedView style={styles.container}>
       <ThemedText type="title">Discovery Feed</ThemedText>
-      <ThemedText>Event discovery and feed will be implemented here.</ThemedText>
+      <ThemedText>
+        Event discovery and feed will be implemented here.
+      </ThemedText>
     </ThemedView>
   );
 }

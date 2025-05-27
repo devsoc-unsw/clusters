@@ -6,7 +6,9 @@ export default function SearchScreen() {
   return (
     <ThemedView style={styles.container}>
       <ThemedText type="title">Event Search</ThemedText>
-      <ThemedText>Event search functionality will be implemented here.</ThemedText>
+      <ThemedText>
+        Event search functionality will be implemented here.
+      </ThemedText>
     </ThemedView>
   );
 }

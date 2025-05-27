@@ -10,7 +10,9 @@ export default function EventDetailsScreen() {
     <ThemedView style={styles.container}>
       <ThemedText type="title">Event Details</ThemedText>
       <ThemedText>Event ID: {id}</ThemedText>
-      <ThemedText>Event details and join/leave functionality will be implemented here.</ThemedText>
+      <ThemedText>
+        Event details and join/leave functionality will be implemented here.
+      </ThemedText>
     </ThemedView>
   );
 }

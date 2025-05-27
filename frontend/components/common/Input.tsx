@@ -10,13 +10,13 @@ interface InputProps {
   numberOfLines?: number;
 }
 
-export function Input({ 
-  placeholder, 
-  value, 
-  onChangeText, 
+export function Input({
+  placeholder,
+  value,
+  onChangeText,
   secureTextEntry = false,
   multiline = false,
-  numberOfLines = 1
+  numberOfLines = 1,
 }: InputProps) {
   const backgroundColor = useThemeColor({}, 'background');
   const borderColor = useThemeColor({}, 'text');
@@ -26,12 +26,12 @@ export function Input({
     <TextInput
       style={[
         styles.input,
-        { 
-          backgroundColor, 
+        {
+          backgroundColor,
           borderColor: borderColor + '40',
-          color: textColor 
+          color: textColor,
         },
-        multiline && { height: numberOfLines * 20 + 20 }
+        multiline && { height: numberOfLines * 20 + 20 },
       ]}
       placeholder={placeholder}
       value={value}

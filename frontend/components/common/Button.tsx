@@ -9,21 +9,30 @@ interface ButtonProps {
   disabled?: boolean;
 }
 
-export function Button({ title, onPress, variant = 'primary', disabled = false }: ButtonProps) {
-  const backgroundColor = useThemeColor({}, variant === 'primary' ? 'tint' : 'background');
-  const textColor = useThemeColor({}, variant === 'primary' ? 'background' : 'text');
+export function Button({
+  title,
+  onPress,
+  variant = 'primary',
+  disabled = false,
+}: ButtonProps) {
+  const backgroundColor = useThemeColor(
+    {},
+    variant === 'primary' ? 'tint' : 'background'
+  );
+  const textColor = useThemeColor(
+    {},
+    variant === 'primary' ? 'background' : 'text'
+  );
 
   return (
     <Pressable
-      style={[
-        styles.button,
-        { backgroundColor },
-        disabled && styles.disabled
-      ]}
+      style={[styles.button, { backgroundColor }, disabled && styles.disabled]}
       onPress={onPress}
       disabled={disabled}
     >
-      <ThemedText style={[styles.text, { color: textColor }]}>{title}</ThemedText>
+      <ThemedText style={[styles.text, { color: textColor }]}>
+        {title}
+      </ThemedText>
     </Pressable>
   );
 }

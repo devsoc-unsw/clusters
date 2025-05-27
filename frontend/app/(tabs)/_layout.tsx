@@ -1,6 +1,6 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-import { Platform, Text } from 'react-native';
+import { Platform, StyleSheet, Text } from 'react-native';
 
 import { HapticTab } from '@/components/HapticTab';
 import TabBarBackground from '@/components/ui/TabBarBackground';
@@ -23,21 +23,32 @@ export default function TabLayout() {
           },
           default: {},
         }),
-      }}>
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
           title: 'Feed',
-          tabBarIcon: ({ color }) => <Text style={{ color, fontSize: 28 }}>🏠</Text>,
+          tabBarIcon: ({ color }) => (
+            <Text style={[styles.tabIcon, { color }]}>🏠</Text>
+          ),
         }}
       />
       <Tabs.Screen
         name="explore"
         options={{
           title: 'Search',
-          tabBarIcon: ({ color }) => <Text style={{ color, fontSize: 28 }}>🔍</Text>,
+          tabBarIcon: ({ color }) => (
+            <Text style={[styles.tabIcon, { color }]}>🔍</Text>
+          ),
         }}
       />
     </Tabs>
   );
 }
+
+const styles = StyleSheet.create({
+  tabIcon: {
+    fontSize: 28,
+  },
+});

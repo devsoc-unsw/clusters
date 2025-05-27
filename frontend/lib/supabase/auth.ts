@@ -16,7 +16,7 @@ export const authService = {
           display_name: profileData.display_name,
           zid: profileData.zid,
           is_arc_member: profileData.is_arc_member || false,
-          platform_role: 'student'
+          platform_role: 'student',
         })
         .select()
         .single();
@@ -40,7 +40,9 @@ export const authService = {
   },
 
   getCurrentUserProfile: async (): Promise<User | null> => {
-    const { data: { user } } = await supabase.auth.getUser();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
 
     if (!user) return null;
 
@@ -55,7 +57,9 @@ export const authService = {
   },
 
   updateUserProfile: async (updates: Partial<User>) => {
-    const { data: { user } } = await supabase.auth.getUser();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
 
     if (!user) throw new Error('Not authenticated');
 
@@ -67,7 +71,7 @@ export const authService = {
       .single();
   },
 
-  onAuthStateChange: (callback: (event: string, session: any) => void) => {
+  onAuthStateChange: (callback: (event: string, session: unknown) => void) => {
     return supabase.auth.onAuthStateChange(callback);
-  }
+  },
 };
