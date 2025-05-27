@@ -1,4 +1,5 @@
 import { supabase } from './client';
+import type { AuthChangeEvent, Session } from '@supabase/supabase-js';
 import type { SignUpData, SignInData, User } from '@/features/auth/types';
 
 export const authService = {
@@ -71,7 +72,9 @@ export const authService = {
       .single();
   },
 
-  onAuthStateChange: (callback: (event: string, session: unknown) => void) => {
+  onAuthStateChange: (
+    callback: (event: AuthChangeEvent, session: Session | null) => void
+  ) => {
     return supabase.auth.onAuthStateChange(callback);
   },
 };
