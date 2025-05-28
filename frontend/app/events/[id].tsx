@@ -1,13 +1,17 @@
 import { StyleSheet } from 'react-native';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { useLocalSearchParams } from 'expo-router';
 
-export default function SearchScreen() {
+export default function EventDetailsScreen() {
+  const { id } = useLocalSearchParams();
+
   return (
     <ThemedView style={styles.container}>
-      <ThemedText type="title">Event Search</ThemedText>
+      <ThemedText type="title">Event Details</ThemedText>
+      <ThemedText>Event ID: {id}</ThemedText>
       <ThemedText>
-        Event search functionality will be implemented here.
+        Event details and join/leave functionality will be implemented here.
       </ThemedText>
     </ThemedView>
   );

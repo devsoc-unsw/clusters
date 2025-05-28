@@ -1,50 +1,136 @@
-# Welcome to your Expo app 👋
+# Clusters Frontend
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Clusters, event management and discovery. 
 
-## Get started
+## Tech Stack
 
-1. Install dependencies
+- **Framework**: React Native with Expo (~52.0.33)
+- **Language**: TypeScript
+- **Navigation**: Expo Router with file-based routing  
+- **Database**: Supabase integration
+- **Package Manager**: Bun
+- **Testing**: Jest with jest-expo
 
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## Quick Start
 
 ```bash
-npm run reset-project
+# Install dependencies
+bun install
+
+# Start development server
+bunx expo start
+
+# Run on specific platforms
+bunx expo start --ios
+bunx expo start --android
+bunx expo start --web
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Project Structure
 
-## Learn more
+```
+frontend/
+├── app/                    # File-based routing
+│   ├── (tabs)/            # Tab navigation routes
+│   ├── auth/              # Authentication screens
+│   ├── events/            # Event management screens
+│   ├── onboarding/        # User onboarding flow
+│   └── settings/          # App settings
+├── components/            # Reusable UI components
+│   ├── common/            # Shared components (Button, Input)
+│   └── ui/                # Platform-specific UI components
+├── features/              # Feature-based organization
+│   ├── auth/              # Authentication logic
+│   ├── events/            # Event management
+│   ├── onboarding/        # Onboarding flow
+│   ├── settings/          # Settings management
+│   └── societies/         # Society-related features
+├── lib/                   # Core utilities
+│   ├── supabase/          # Database integration
+│   └── types/             # Shared type definitions
+└── hooks/                 # Custom React hooks
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+## Key Features
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- **Event Discovery**: Browse and search for events
+- **Event Management**: Create, join, and manage events
+- **Authentication**: Sign in/up with Supabase
+- **User Onboarding**: Guided setup for new users
+- **Account Settings**: Profile and preference management
+- **Themed UI**: Consistent styling with light/dark mode support
 
-## Join the community
+## Development
 
-Join our community of developers creating universal apps.
+### Environment Setup
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+1. Copy environment variables:
+```bash
+cp .env.example .env
+```
+
+2. Configure Supabase credentials in `.env`
+
+### Available Scripts
+
+```bash
+bunx expo start        # Start Expo development server
+bunx expo start --android  # Run on Android device/emulator
+bunx expo start --ios      # Run on iOS device/simulator
+bunx expo start --web      # Run in web browser
+bun run test           # Run tests with Jest
+bun run lint           # Run ESLint and auto-fix issues
+bun run lint:check     # Check linting without fixing
+bun run prettier       # Format all files with Prettier
+bun run prettier:check # Check Prettier formatting
+bun run typecheck      # Run TypeScript type checking
+```
+
+### Code Quality & Linting
+
+This project uses ESLint, Prettier, and TypeScript for code quality:
+
+- **ESLint**: Configured with TypeScript, React, and React Native rules
+- **Prettier**: Code formatting with no final newlines
+- **Pre-commit hooks**: Automatically run type checking and linting before commits
+- **TypeScript**: Strict type checking enabled
+
+#### Linting Rules
+- TypeScript best practices enforced
+- React and React Native specific rules
+- Prettier integration for consistent formatting
+- No trailing newlines in files
+- Unused variables detection
+- React hooks usage validation
+
+#### Pre-commit Workflow
+Every commit automatically:
+1. Runs TypeScript type checking
+2. Lints and formats only staged files
+3. Blocks commit if errors exist
+
+### Code Organization
+
+- **Features**: Organized by domain in `features/` directory
+- **Components**: Themed components for consistent styling
+- **Types**: TypeScript interfaces in feature-specific `types/` folders
+- **Hooks**: Custom hooks for feature-specific logic
+
+### Routing
+
+Uses Expo Router with file-based routing:
+
+- `/` - Discovery feed (tabs)
+- `/explore` - Event search (tabs)
+- `/auth/sign-in` - Authentication
+- `/auth/sign-up` - Registration
+- `/events/create` - Event creation
+- `/events/[id]` - Event details
+- `/settings` - Account settings
+- `/onboarding` - User onboarding
+
+## Supabase Integration
+
+- Client configuration: `lib/supabase/client.ts`
+- Authentication: `lib/supabase/auth.ts`
+- Event management: `lib/supabase/events.ts`
