@@ -1,4 +1,4 @@
-export type UserRoleType = 'student' | 'society_manager' | 'platform_admin';
+export type UserRoleType = 'user' | 'society_manager' | 'platform_admin';
 
 export type SocietyMemberRoleType = 'admin' | 'event_manager' | 'member';
 
