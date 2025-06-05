@@ -2,8 +2,9 @@
 .env
 .env.local
 
-# Documentation
+# AI
 CLAUDE.md
+.mcp.json
 
 # Dependencies
 node_modules/

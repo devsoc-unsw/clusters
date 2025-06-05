@@ -17,7 +17,7 @@ export const authService = {
           display_name: profileData.display_name,
           zid: profileData.zid,
           is_arc_member: profileData.is_arc_member || false,
-          platform_role: 'student',
+          platform_role: 'user',
         })
         .select()
         .single();
