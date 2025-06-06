@@ -2,7 +2,7 @@ import { FlatList, StyleSheet, ViewStyle } from 'react-native';
 import { ThemedView } from '@/components/ThemedView';
 import CardFeed from '@/components/ui/CardFeed';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-
+import { EventStatusType } from '@/lib/types/enums';
 // Mock Data
 const mockEvents = [
   {
@@ -12,7 +12,7 @@ const mockEvents = [
     start_time: '2025-06-06',
     end_time: '2025-06-07',
     category_tags: ['Tech', 'Networking'],
-    status: 'upcoming',
+    status: 'upcoming' as EventStatusType,
     cover_image_url: undefined,
   },
   {
@@ -22,7 +22,7 @@ const mockEvents = [
     start_time: '2025-06-10',
     end_time: '2025-06-11',
     category_tags: ['Art', 'Exhibition'],
-    status: 'upcoming',
+    status: 'upcoming' as EventStatusType,
     cover_image_url: undefined,
   },
 ];

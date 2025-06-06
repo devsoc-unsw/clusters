@@ -1,12 +1,12 @@
 # Clusters Frontend
 
-Clusters, event management and discovery. 
+Clusters, event management and discovery.
 
 ## Tech Stack
 
 - **Framework**: React Native with Expo (~52.0.33)
 - **Language**: TypeScript
-- **Navigation**: Expo Router with file-based routing  
+- **Navigation**: Expo Router with file-based routing
 - **Database**: Supabase integration
 - **Package Manager**: Bun
 - **Testing**: Jest with jest-expo
@@ -65,6 +65,7 @@ frontend/
 ### Environment Setup
 
 1. Copy environment variables:
+
 ```bash
 cp .env.example .env
 ```
@@ -96,6 +97,7 @@ This project uses ESLint, Prettier, and TypeScript for code quality:
 - **TypeScript**: Strict type checking enabled
 
 #### Linting Rules
+
 - TypeScript best practices enforced
 - React and React Native specific rules
 - Prettier integration for consistent formatting
@@ -104,7 +106,9 @@ This project uses ESLint, Prettier, and TypeScript for code quality:
 - React hooks usage validation
 
 #### Pre-commit Workflow
+
 Every commit automatically:
+
 1. Runs TypeScript type checking
 2. Lints and formats only staged files
 3. Blocks commit if errors exist

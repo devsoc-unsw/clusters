@@ -18,7 +18,7 @@ export default function CardFeed({
   end_time,
   category_tags,
   status,
-  cover_image_url,
+  // cover_image_url,
 }: CardFeedProps) {
   return (
     <View style={styles.card}>
@@ -50,7 +50,7 @@ export default function CardFeed({
             </>
           )}
         </View>
-      </View>     
+      </View>
     </View>
   );
 }
