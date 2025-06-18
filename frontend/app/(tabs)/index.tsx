@@ -8,6 +8,7 @@ export default function HomeScreen() {
       <ThemedText type="title">Discovery Feed</ThemedText>
       <ThemedText>
         Event discovery and feed will be implemented here.
+        Hi
       </ThemedText>
     </ThemedView>
   );
